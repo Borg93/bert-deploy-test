@@ -3,7 +3,7 @@ from transformers import pipeline
 
 
 
-path = "classifer\\roberta-base"
+path = "roberta-base"
 
 class Model:
     def __init__(self):
