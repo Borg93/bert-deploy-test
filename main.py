@@ -23,6 +23,9 @@ def predict(request: SentimentRequest, model: Model = Depends(get_model)):
     sentiment, score = res[0]['sequence'], res[0]['score']
     return SentimentResponse( sentiment = sentiment, score = score)
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)
+# if __name__ == "__main__":
+#     print("running")
+#     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=False)
+
+
     
