@@ -16,11 +16,11 @@ class SentimentResponse(BaseModel):
 
 
 @app.get("/")
-async def root():
+def root():
     return {"message": "hello world"}
 
 @app.post("/predict", response_model=SentimentResponse)  #, 
-async def predict(request: SentimentRequest, model: Model = Depends(get_model)):
+def predict(request: SentimentRequest, model: Model = Depends(get_model)):
     res = model.predict(request.text)
     sentiment, score = res[0]['sequence'], res[0]['score']
     return SentimentResponse( sentiment = sentiment, score = score)
